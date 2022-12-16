@@ -1,6 +1,15 @@
 
 import random as rd
-from pathlib import Path 
+import os
+import tkinter as tki
+
+
+janela = tki.Tk()
+janela.title(string="Just Forca")
+janela.mainloop()
+
+
+
 
 # Escolhendo o assunto
 print("""
@@ -15,8 +24,13 @@ lista_assuntos = ['animais', 'frutas']
 assunto = lista_assuntos[escolha_usr]
 
 
+# Informando o caminho de onde estão os arquivos .txt
+path_projeto = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+path_data = os.path.join(path_projeto, 'database', f'{assunto}.txt')
+
+
 # Escolhendo a palavra relacionada ao assunto
-with open(file=f'{Path().absolute()}/database/{assunto}.txt', 
+with open(file=path_data, 
           mode='r', 
           encoding='utf-8') as arquivo:
     
@@ -67,4 +81,6 @@ while True:
             break
 
         print(f'\nVOCÊ ERROU E AGORA SÓ TEM {vida} VIDA')
+
+
 

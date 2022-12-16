@@ -1,5 +1,16 @@
-from pathlib import Path
+import os
 
-assunto = 'animais'
+assunto = 'frutas'
+arquivo = 'frutas'
+path_file = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+path_raiz = os.path.join(path_file, 'database', f'{assunto}.txt')
+print(path_raiz)
 
-print(f'{Path().absolute()}')
+'''print()
+
+with open(file=f'{path}', 
+          mode='r', 
+          encoding='utf-8') as arquivo:
+    
+    lista_palavras = arquivo.readlines()
+    print(lista_palavras)'''
